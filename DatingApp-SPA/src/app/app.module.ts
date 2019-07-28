@@ -1,3 +1,4 @@
+import { BsDropdownModule, TabsModule, PaginationModule, ButtonsModule, } from 'ngx-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
@@ -15,7 +16,6 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
-import { BsDropdownModule, TabsModule, } from 'ngx-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { MemberListComponent } from './members/member-list/member-list.component';
@@ -61,6 +61,8 @@ export function tokenGetter() {
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
