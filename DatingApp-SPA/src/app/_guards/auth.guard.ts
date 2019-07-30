@@ -14,7 +14,6 @@ export class AuthGuard implements CanActivate {
     if (this.authService.loggedIn()) {
       return true;
     }
-    console.warn('false');
     this.alertify.error('You shell not pass!!!');
     this.router.navigate(['/home']);
     return false;
