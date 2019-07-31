@@ -50,7 +50,7 @@ namespace DatingApp.API.Controllers
             if (userId != int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
 
-            var userFromRepo = await _repo.GetUser(userId);
+            var userFromRepo = await _repo.GetUser(userId, true);
 
             var file = photoForCretionDto.File;
 
@@ -94,7 +94,7 @@ namespace DatingApp.API.Controllers
             if (userId != int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
             
-            var userFromRepo = await _repo.GetUser(userId);
+            var userFromRepo = await _repo.GetUser(userId, true);
 
             if (!userFromRepo.Photos.Any(p => p.Id == id))
                 return Unauthorized();
@@ -122,7 +122,7 @@ namespace DatingApp.API.Controllers
              if (userId != int.Parse(User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
             
-            var userFromRepo = await _repo.GetUser(userId);
+            var userFromRepo = await _repo.GetUser(userId, true);
 
             if (!userFromRepo.Photos.Any(p => p.Id == id))
                 return Unauthorized();
